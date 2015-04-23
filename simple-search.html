@@ -1,0 +1,21 @@
+<head>
+  <title>Simple Search with Meteor</title>
+</head>
+
+<body>
+  {{> esInput index="colors" placeholder="Search..."}}
+
+  <ul>
+    {{#esEach index="colors"}}
+      <li>Color name: {{name}}</li>
+    {{/esEach}}
+  </ul>
+
+  {{#ifEsHasNoResults index="colors"}}
+    <div>No results found!</div>
+  {{/ifEsHasNoResults}}
+
+  {{#ifEsIsSearching index="colors"}}
+    <div>Loading...</div>
+  {{/ifEsIsSearching}}
+</body>
